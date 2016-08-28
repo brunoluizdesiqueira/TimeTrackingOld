@@ -1,4 +1,4 @@
-package com.brunosiqueira.main;
+package br.com.brunosiqueira.programa;
 
 public class TimeTracking {
 

@@ -5,4 +5,4 @@
  * @author Bruno
  *
  */
-package com.brunosiqueira.main;
+package br.com.brunosiqueira.programa;

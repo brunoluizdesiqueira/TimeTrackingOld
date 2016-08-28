@@ -1,9 +1,18 @@
 package br.com.brunosiqueira.excecao;
 
-public class TesteMinhaExcecao extends RuntimeException {
+public class MinhaExcecao extends RuntimeException {
 	
-  public TesteMinhaExcecao(String value) {
-	  super("Minha excecao: " + value);
+	
+  private final String value;
+
+public MinhaExcecao(String value) {
+	super("Minha excecao: " + value);
+	
+	this.value = value;	  
+}
+	public String getValue() {
+		return value;
+	}
+
 }
 	
-}
