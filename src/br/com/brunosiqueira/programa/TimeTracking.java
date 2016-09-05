@@ -60,7 +60,6 @@ public class TimeTracking {
 	  
 	  System.out.println("Membro: " + bruno.getNome());
 	  
-
 	}
 
 }
