@@ -47,19 +47,9 @@ public class TimeTracking {
 		return id;
 	}
 
-
-	public static void main(String[] args) {
-		
-	  Membro bruno = new Membro();	
-	  
-	  bruno.setNome("Bruno");
-	  bruno.setEmail("brunoluizdesiqueira@gmail.com");
-	  bruno.setLogin("bruno");
-	  bruno.setSenha("123456");
-	  bruno.setStatus(StatusPessoa.Ativo);
-	  
-	  System.out.println("Membro: " + bruno.getNome());
-	  
+	public static void main(String[] args) {	
+	  Membro membro = new Membro("Bruno", StatusPessoa.Ativo, "brunoluizdesiqueira@gmail.com", "123456", "bruno");		   
+	  System.out.println("Membro: " + membro.getNome());  
 	}
 
 }

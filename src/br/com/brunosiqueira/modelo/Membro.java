@@ -5,6 +5,23 @@ public class Membro extends Pessoa {
 	private String senha;
 	private String login;
 	
+	public Membro() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Membro(String nome, StatusPessoa status, String email, String senha, String login) {
+		super();
+		
+		super.setNome(nome);
+		super.setStatus(status);
+		this.setEmail(email);
+		this.setLogin(login);
+		this.setSenha(senha);
+		this.setStatus(status);
+		
+	}
+	
 	public String getEmail() {
 		return email;
 	}
@@ -22,5 +39,7 @@ public class Membro extends Pessoa {
 	}
 	public void setLogin(String login) {
 		this.login = login;
-	}	
+	}
+	
+	
 }
