@@ -1,10 +1,6 @@
-package br.com.brunosiqueira.programa;
+package br.com.brunosiqueira.modelo;
 
 import java.util.Date;
-
-import br.com.brunosiqueira.modelo.Membro;
-import br.com.brunosiqueira.modelo.Projeto;
-import br.com.brunosiqueira.modelo.StatusPessoa;
 
 public class TimeTracking {
 	private Integer id;
@@ -45,11 +41,6 @@ public class TimeTracking {
 
 	public Integer getId() {
 		return id;
-	}
-
-	public static void main(String[] args) {	
-	  Membro membro = new Membro("Bruno", StatusPessoa.Ativo, "brunoluizdesiqueira@gmail.com", "123456", "bruno");		   
-	  System.out.println("Membro: " + membro.getNome());  
 	}
 
 }
