@@ -1,8 +1,8 @@
 package br.com.brunosiqueira.modelo;
 
 public abstract class Pessoa {
-	String nome;
-	StatusPessoa status;
+	private String nome;
+	private StatusPessoa status;
 	
 	public String getNome() {
 		return nome;
