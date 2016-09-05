@@ -56,7 +56,7 @@ public class TimeTracking {
 	  bruno.setEmail("brunoluizdesiqueira@gmail.com");
 	  bruno.setLogin("bruno");
 	  bruno.setSenha("123456");
-	  bruno.setStatus(StatusPessoa.Ativa);
+	  bruno.setStatus(StatusPessoa.Ativo);
 	  
 	  System.out.println("Membro: " + bruno.getNome());
 	  
