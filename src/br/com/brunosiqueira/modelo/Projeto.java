@@ -1,27 +1,29 @@
 package br.com.brunosiqueira.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Projeto {
 	private String nome;
-	private String responsavel;
+	private Membro responsavel;
 	private String cliente;
 	private List<Membro> membros;
-	private List<Tarefa> tarefas;
+	private ArrayList<Tarefa> tarefas;
 	
 	public List<Tarefa> getTarefas() {
 		return tarefas;
 	}
 
-	public void setTarefas(List<Tarefa> tarefas) {
-		this.tarefas = tarefas;
+	public void setTarefas(Tarefa tarefas) {
+		this.tarefas = new ArrayList<Tarefa>();
+		this.tarefas.add(tarefas);
 	}
 
-	public String getResponsavel() {
+	public Membro getResponsavel() {
 		return responsavel;
 	}
 	
-	public void setResponsavel(String responsavel) {
+	public void setResponsavel(Membro responsavel) {
 		this.responsavel = responsavel;
 	}
 	public String getCliente() {
@@ -41,7 +43,12 @@ public class Projeto {
 		return membros;
 	}
 	public void setMembros(List<Membro> membros) {
-		this.membros = membros;
+		this.membros = (membros);
+	}
+	
+	public void setMembro(Membro membro){
+		this.membros = new ArrayList<Membro>();
+		this.membros.add(membro);
 	}
 	
 }

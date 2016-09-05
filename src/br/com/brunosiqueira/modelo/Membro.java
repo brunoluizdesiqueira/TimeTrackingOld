@@ -41,5 +41,10 @@ public class Membro extends Pessoa {
 		this.login = login;
 	}
 	
+	@Override
+	public String toString() {
+		return this.getNome();
+	}
+	
 	
 }
