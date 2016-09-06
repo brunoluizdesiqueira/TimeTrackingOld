@@ -15,7 +15,6 @@ public class Cronometro {
 	public Cronometro() {
 		super();
 		this.tempoPercorrido = new ArrayList<Calendar>();
-		this.tempoPercorrido = null;
 	}
 	
 	public void registrar(){
