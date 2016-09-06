@@ -1,12 +1,10 @@
 package br.com.brunosiqueira.modelo;
 
-import java.util.Date;
-
 public class TimeTracking {
 	private Integer id;
 	private Projeto projeto;
 	private String descricao;
-	private Date tempoTotal;
+	private long tempoTotal;
 	
 
 	public Projeto getProjeto() {
@@ -29,12 +27,12 @@ public class TimeTracking {
 	}
 
 
-	public Date getTempoTotal() {
+	public long getTempoTotal() {
 		return tempoTotal;
 	}
 
 
-	public void setTempoTotal(Date tempoTotal) {
+	public void setTempoTotal(long tempoTotal) {
 		this.tempoTotal = tempoTotal;
 	}
 

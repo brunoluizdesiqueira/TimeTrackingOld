@@ -10,6 +10,12 @@ public class Projeto {
 	private List<Membro> membros;
 	private ArrayList<Tarefa> tarefas;
 	
+	
+	public Projeto() {
+		super();
+		this.membros = new ArrayList<Membro>();
+	}
+
 	public List<Tarefa> getTarefas() {
 		return tarefas;
 	}
@@ -46,8 +52,7 @@ public class Projeto {
 		this.membros = (membros);
 	}
 	
-	public void setMembro(Membro membro){
-		this.membros = new ArrayList<Membro>();
+	public void setMembro(Membro membro){		
 		this.membros.add(membro);
 	}
 	
