@@ -23,8 +23,8 @@ public class Running {
 		erp.setMembro(bruno);
 		erp.setResponsavel(bruno);
 		// Criando uma nova tarefa e atribuindo ao projeto
-		erp.setTarefas(new Tarefa("Tarefa de criaÃ§Ã£o do Emissor MDF-e"));
-		erp.setTarefas(new Tarefa("Tarefa de criaÃ§Ã£o do Emissor CT-e"));
+		erp.setTarefas(new Tarefa("Tarefa de criação do Emissor MDF-e"));
+		erp.setTarefas(new Tarefa("Tarefa de criação do Emissor CT-e"));
 		
 		System.out.println(erp.getMembros().toString() + " " + erp.getTarefa());
 		
