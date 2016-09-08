@@ -7,12 +7,12 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Cronometro {
+public class TimeLine {
 	
 	private Timer timer;
 	private ArrayList<Calendar> tempoPercorrido;
 	
-	public Cronometro() {
+	public TimeLine() {
 		super();
 		this.tempoPercorrido = new ArrayList<Calendar>();
 	}
@@ -23,8 +23,7 @@ public class Cronometro {
 	}
 	
 	public ArrayList<Calendar> periodo(){
-		return tempoPercorrido;
-		
+		return tempoPercorrido;	
 	}
 	
 	public void iniciaCronometro(){

@@ -4,8 +4,19 @@ public class TimeTracking {
 	private Integer id;
 	private Projeto projeto;
 	private String descricao;
+	private TimeLine timeLine; 
 	private long tempoTotal;
 	
+
+	public TimeTracking(Projeto projeto, String descricao) {
+		super();
+		this.projeto = projeto;
+		this.descricao = descricao;
+		
+		// cria a class TimeLine
+		this.timeLine = new TimeLine();
+	}
+
 
 	public Projeto getProjeto() {
 		return projeto;
@@ -39,6 +50,16 @@ public class TimeTracking {
 
 	public Integer getId() {
 		return id;
+	}
+
+
+	public TimeLine getTimeLine() {
+		return timeLine;
+	}
+
+
+	public void setTimeLine(TimeLine timeLine) {
+		this.timeLine = timeLine;
 	}
 
 }
