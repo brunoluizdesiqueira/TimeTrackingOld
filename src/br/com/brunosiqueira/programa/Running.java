@@ -18,20 +18,16 @@ public class Running {
 		
 		Membro amanda = new Membro("Amanda", StatusPessoa.Ativo, "amanda.manso@icloud.com", "654321", "amanda");		   
 		System.out.println("Membro: " + amanda.getNome());
-	
-		// Criando uma nova tarefa
-		Tarefa tarefa = new Tarefa();
-		tarefa.setDescricao("Tarefa de criação do Emissor MDFe");
 				
 		// Criando um novo projeto
-		Projeto erp = new Projeto();
+		Projeto erp = new Projeto("Bimer Project");
 		erp.setMembro(amanda);
 		erp.setMembro(bruno);
-		erp.setNome("Bimer Project");
 		erp.setResponsavel(bruno);
-		erp.setTarefas(tarefa);
+		// Criando uma nova tarefa e atribuindo ao projeto
+		erp.setTarefas(new Tarefa("Tarefa de criação do Emissor MDFe"));
 		
-		System.out.println(erp.getMembros().toString());
+		System.out.println(erp.getMembros().toString() + " " + erp.getTarefas().get(0).getDescricao());
 		
 		// Criando a class TimeTracking
 		TimeTracking timeTracking = new TimeTracking(erp, "Teste time tracking");		

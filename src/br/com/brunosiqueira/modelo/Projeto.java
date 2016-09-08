@@ -11,9 +11,10 @@ public class Projeto {
 	private ArrayList<Tarefa> tarefas;
 	
 	
-	public Projeto() {
+	public Projeto(String nome) {
 		super();
 		this.membros = new ArrayList<Membro>();
+		this.nome = nome;
 	}
 
 	public List<Tarefa> getTarefas() {
