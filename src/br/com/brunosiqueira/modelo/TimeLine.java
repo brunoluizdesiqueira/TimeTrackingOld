@@ -22,6 +22,18 @@ public class TimeLine {
 		this.tempoPercorrido.add(tmp);
 	}
 	
+	public StringBuilder retornaTempo(){		
+		SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss:ms:ms Z");
+		StringBuilder time = new StringBuilder();
+		
+		for (Calendar c: tempoPercorrido ) {
+		  dateFormat.setTimeZone(c.getTimeZone());
+		  time.append(dateFormat.format(c.getTime()) + ' ');
+		}
+		
+		return time;
+	}
+	
 	public ArrayList<Calendar> periodo(){
 		return tempoPercorrido;	
 	}

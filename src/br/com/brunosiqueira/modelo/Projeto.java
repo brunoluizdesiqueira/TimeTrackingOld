@@ -14,6 +14,7 @@ public class Projeto {
 	public Projeto(String nome) {
 		super();
 		this.membros = new ArrayList<Membro>();
+		this.tarefas = new ArrayList<Tarefa>();
 		this.nome = nome;
 	}
 
@@ -21,9 +22,16 @@ public class Projeto {
 		return tarefas;
 	}
 
-	public void setTarefas(Tarefa tarefas) {
-		this.tarefas = new ArrayList<Tarefa>();
-		this.tarefas.add(tarefas);
+	public void setTarefas(Tarefa tarefa) {
+		this.tarefas.add(tarefa);
+	}
+	
+	public StringBuilder getTarefa(){
+		StringBuilder descricao = new StringBuilder();
+		for (Tarefa t : tarefas){
+			descricao.append("Descrição da tarefa: " + t.getDescricao() + ' ');	
+		}
+		return descricao;		
 	}
 
 	public Membro getResponsavel() {
