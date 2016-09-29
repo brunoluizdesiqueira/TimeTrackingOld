@@ -4,16 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Projeto {
+	private int id;
 	private String nome;
-	private Membro responsavel;
-	private String cliente;
-	private List<Membro> membros;
 	private ArrayList<Tarefa> tarefas;
-	
+	private String cliente;
 	
 	public Projeto(String nome) {
 		super();
-		this.membros = new ArrayList<Membro>();
 		this.tarefas = new ArrayList<Tarefa>();
 		this.nome = nome;
 	}
@@ -29,21 +26,15 @@ public class Projeto {
 	public StringBuilder getTarefa(){
 		StringBuilder descricao = new StringBuilder();
 		for (Tarefa t : tarefas){
-			descricao.append("Descrição da tarefa: " + t.getDescricao() + ' ');	
+			descricao.append("Descricao da tarefa: " + t.getDescricao() + ' ');	
 		}
 		return descricao;		
 	}
 
-	public Membro getResponsavel() {
-		return responsavel;
-	}
-	
-	public void setResponsavel(Membro responsavel) {
-		this.responsavel = responsavel;
-	}
 	public String getCliente() {
 		return cliente;
 	}
+	
 	public void setCliente(String cliente) {
 		this.cliente = cliente;
 	}
@@ -54,15 +45,13 @@ public class Projeto {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public List<Membro> getMembros() {
-		return membros;
+
+	public int getId() {
+		return id;
 	}
-	public void setMembros(List<Membro> membros) {
-		this.membros = (membros);
-	}
-	
-	public void setMembro(Membro membro){		
-		this.membros.add(membro);
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

@@ -1,16 +1,16 @@
 package br.com.brunosiqueira.modelo;
 
-public class Membro extends Pessoa {
+public class Colaborador extends Pessoa {
 	private String email;
 	private String senha;
 	private String login;
 	
-	public Membro() {
+	public Colaborador() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Membro(String nome, StatusPessoa status, String email, String senha, String login) {
+	public Colaborador(String nome, StatusPessoa status, String email, String senha, String login) {
 		super();
 		
 		super.setNome(nome);

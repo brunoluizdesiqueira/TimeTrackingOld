@@ -1,6 +1,6 @@
 package br.com.brunosiqueira.programa;
 
-import br.com.brunosiqueira.modelo.Membro;
+import br.com.brunosiqueira.modelo.Colaborador;
 import br.com.brunosiqueira.modelo.Projeto;
 import br.com.brunosiqueira.modelo.StatusPessoa;
 import br.com.brunosiqueira.modelo.Tarefa;
@@ -11,10 +11,10 @@ public class Running {
 	public static void main(String[] args) {
 		
 		// Criando um novo membro
-		Membro bruno = new Membro("Bruno", StatusPessoa.Ativo, "brunoluizdesiqueira@gmail.com", "123456", "bruno");		   
+		Colaborador bruno = new Colaborador("Bruno", StatusPessoa.Ativo, "brunoluizdesiqueira@gmail.com", "123456", "bruno");		   
 		System.out.println("Membro: " + bruno.getNome());
 		
-		Membro amanda = new Membro("Amanda", StatusPessoa.Ativo, "amanda.manso@icloud.com", "654321", "amanda");		   
+		Colaborador amanda = new Colaborador("Amanda", StatusPessoa.Ativo, "amanda.manso@icloud.com", "654321", "amanda");		   
 		System.out.println("Membro: " + amanda.getNome());
 				
 		// Criando um novo projeto
