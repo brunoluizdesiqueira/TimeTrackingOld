@@ -7,12 +7,13 @@ public class Projeto {
 	private int id;
 	private String nome;
 	private ArrayList<Tarefa> tarefas;
-	private String cliente;
+	private Cliente cliente;
 	
 	public Projeto(String nome, Cliente cliente) {
 		super();
 		this.tarefas = new ArrayList<Tarefa>();
 		this.nome = nome;
+		this.cliente = cliente;		
 	}
 
 	public List<Tarefa> getTarefas() {
@@ -31,11 +32,11 @@ public class Projeto {
 		return descricao;		
 	}
 
-	public String getCliente() {
+	public Cliente getCliente() {
 		return cliente;
 	}
 	
-	public void setCliente(String cliente) {
+	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
 	
