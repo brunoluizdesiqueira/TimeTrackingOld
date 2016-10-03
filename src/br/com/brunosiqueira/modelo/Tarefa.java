@@ -9,6 +9,7 @@ public class Tarefa {
 	private String descricao;
 	private TipoTarefa tipo;
 	private Colaborador responsavel;
+	private Colaborador membro;
 	private Calendar criacao;
 	
 	// Ver uma forma de vincular um cliente -> projeto
@@ -16,9 +17,11 @@ public class Tarefa {
 	private Projeto projeto; 
 	private List<Tag> tag;
 
-	public Tarefa(String descricao) {
+	public Tarefa(String descricao, Colaborador responsavel, Colaborador membro) {
 		super();
 		this.descricao = descricao;
+		this.responsavel = responsavel;
+		this.membro = membro;
 	}
 	
 	public String getTitulo() {
@@ -83,6 +86,14 @@ public class Tarefa {
 
 	public void setProjeto(Projeto projeto) {
 		this.projeto = projeto;
+	}
+
+	public Colaborador getMembro() {
+		return membro;
+	}
+
+	public void setMembro(Colaborador membro) {
+		this.membro = membro;
 	}
 	
 }

@@ -9,7 +9,7 @@ public class Projeto {
 	private ArrayList<Tarefa> tarefas;
 	private String cliente;
 	
-	public Projeto(String nome) {
+	public Projeto(String nome, Cliente cliente) {
 		super();
 		this.tarefas = new ArrayList<Tarefa>();
 		this.nome = nome;
@@ -42,7 +42,8 @@ public class Projeto {
 	public String getNome() {
 		return nome;
 	}
-	public void setNome(String nome) {
+	
+    public void setNome(String nome) {
 		this.nome = nome;
 	}
 

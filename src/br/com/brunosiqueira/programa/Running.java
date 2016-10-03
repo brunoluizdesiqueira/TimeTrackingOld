@@ -1,5 +1,6 @@
 package br.com.brunosiqueira.programa;
 
+import br.com.brunosiqueira.modelo.Cliente;
 import br.com.brunosiqueira.modelo.Colaborador;
 import br.com.brunosiqueira.modelo.Projeto;
 import br.com.brunosiqueira.modelo.StatusPessoa;
@@ -17,16 +18,14 @@ public class Running {
 		Colaborador amanda = new Colaborador("Amanda", StatusPessoa.Ativo, "amanda.manso@icloud.com", "654321", "amanda");		   
 		System.out.println("Membro: " + amanda.getNome());
 				
-		// Criando um novo projeto
-		Projeto erp = new Projeto("Bimer Project");
-		erp.setMembro(amanda);
-		erp.setMembro(bruno);
-		erp.setResponsavel(bruno);
-		// Criando uma nova tarefa e atribuindo ao projeto
-		erp.setTarefas(new Tarefa("Tarefa de criacao do Emissor MDF-e"));
-		erp.setTarefas(new Tarefa("Tarefa de criacao do Emissor CT-e"));
+		// Criando um novo projeto para o cliente Alterdata
+		Projeto erp = new Projeto("Bimer Project", new Cliente("Alterdata"));
 		
-		System.out.println(erp.getMembros().toString() + " " + erp.getTarefa());
+		// Criando uma nova tarefa e atribuindo ao projeto
+		erp.setTarefas(new Tarefa("Tarefa de criacao do Emissor MDF-e",bruno, amanda));
+		erp.setTarefas(new Tarefa("Tarefa de criacao do Emissor CT-e", amanda, bruno));
+		
+		System.out.println(erp.getNome().toString() + " " + erp.getTarefa());
 		
 		// Criando a class TimeTracking
 		TimeTracking timeTracking = new TimeTracking(erp, "Teste time tracking");		
