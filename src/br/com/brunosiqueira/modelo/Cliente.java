@@ -1,5 +1,6 @@
 package br.com.brunosiqueira.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente extends Pessoa {
@@ -7,16 +8,29 @@ public class Cliente extends Pessoa {
 	private List<Projeto> projetos;
 	
 	
-	public Cliente(String nome) {
+	public Cliente(String nome, Projeto projeto) {
 		super();
-		this.setNome(nome);
+		this.projetos = new ArrayList<Projeto>();
+		
+		this.setNome(nome);				
+		this.setProjeto(projeto);
 	}
 
-	public List<Projeto> getProjetos() {
+	public List<Projeto> getAllProjetos() {
 		return projetos;
 	}
+	
+   public Projeto getProjeto(Projeto p) {
+		
+		if (this.projetos.contains(p)) {
+		  	return this.projetos.get(this.projetos.indexOf(p));
+		}
+		else {
+			return null;
+		}
+	}
 
-	public void setProjetos(List<Projeto> projetos) {
-		this.projetos = projetos;
+	public void setProjeto(Projeto projeto) {
+		this.projetos.add(projeto);
 	}
 }
