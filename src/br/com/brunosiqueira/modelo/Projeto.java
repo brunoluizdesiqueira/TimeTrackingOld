@@ -6,14 +6,13 @@ import java.util.List;
 public class Projeto {
 	private int id;
 	private String nome;
-	private ArrayList<Tarefa> tarefas;
+	private List<Tarefa> tarefas;
 	private Cliente cliente;
 	
-	public Projeto(String nome, Cliente cliente) {
+	public Projeto(String nome) {
 		super();
 		this.tarefas = new ArrayList<Tarefa>();
 		this.nome = nome;
-		this.cliente = cliente;		
 	}
 
 	public List<Tarefa> getTarefas() {

@@ -1,5 +1,6 @@
 package br.com.brunosiqueira.modelo;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.List;
 
@@ -10,7 +11,7 @@ public class Tarefa {
 	private TipoTarefa tipo;
 	private Colaborador responsavel;
 	private Colaborador membro;
-	private Calendar criacao;
+	private LocalDate criacao;
 	
 	// Ver uma forma de vincular um cliente -> projeto
 	// deve ser buscado por cliente e assiciado um dos projetos deste cliente
@@ -72,11 +73,11 @@ public class Tarefa {
 		this.tag = tag;
 	}
 
-	public Calendar getCriacao() {
+	public LocalDate getCriacao() {
 		return criacao;
 	}
 
-	public void setCriacao(Calendar criacao) {
+	public void setCriacao(LocalDate criacao) {
 		this.criacao = criacao;
 	}
 

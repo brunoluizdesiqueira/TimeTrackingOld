@@ -13,17 +13,19 @@ public class Running {
 		
 		// Cadastrando um novo colaborador
 		Colaborador bruno = new Colaborador("Bruno", StatusPessoa.Ativo, "brunoluizdesiqueira@gmail.com", "123456", "bruno");		   
-		System.out.println("Membro: " + bruno.getNome());
 		
 		// Cadastrando um novo colaborador
 		Colaborador amanda = new Colaborador("Amanda", StatusPessoa.Ativo, "amanda.manso@icloud.com", "654321", "amanda");		   
-		System.out.println("Membro: " + amanda.getNome());
 		
-		Projeto erp;
+		// Cria um novo projeto
+		Projeto erp = new Projeto("Bimer Project");
+
 		// Criando um cliente-projeto
-	
-		Cliente alterdata = new Cliente("Altedata",  erp = new Projeto("Bimer Project", alterdata));
-			
+		Cliente alterdata = new Cliente("Altedata", erp);
+		
+		// Seta o cliente do projeto
+		erp.setCliente(alterdata);
+		
 		// Criando uma nova tarefa e atribuindo ao projeto
 		erp.setTarefas(new Tarefa("Tarefa de criacao do Emissor MDF-e",bruno, amanda));
 		erp.setTarefas(new Tarefa("Tarefa de criacao do Emissor CT-e", amanda, bruno));

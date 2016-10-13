@@ -20,7 +20,7 @@ public class Cliente extends Pessoa {
 		return projetos;
 	}
 	
-   public Projeto getProjeto(Projeto p) {
+   public Projeto getLocalizaProjeto(Projeto p) {
 		
 		if (this.projetos.contains(p)) {
 		  	return this.projetos.get(this.projetos.indexOf(p));
