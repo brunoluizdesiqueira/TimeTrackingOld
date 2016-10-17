@@ -1,7 +1,6 @@
 package br.com.brunosiqueira.modelo;
 
 import java.time.LocalDate;
-import java.util.Calendar;
 import java.util.List;
 
 public class Tarefa {
@@ -12,6 +11,7 @@ public class Tarefa {
 	private Colaborador responsavel;
 	private Colaborador membro;
 	private LocalDate criacao;
+	private List<TimeLine> timeLine;
 	
 	// Ver uma forma de vincular um cliente -> projeto
 	// deve ser buscado por cliente e assiciado um dos projetos deste cliente
@@ -23,6 +23,7 @@ public class Tarefa {
 		this.descricao = descricao;
 		this.responsavel = responsavel;
 		this.membro = membro;
+		this.criacao = LocalDate.now();
 	}
 	
 	public String getTitulo() {
@@ -95,6 +96,16 @@ public class Tarefa {
 
 	public void setMembro(Colaborador membro) {
 		this.membro = membro;
+	}
+
+
+	public List<TimeLine> getTimeLine() {
+		return timeLine;
+	}
+
+
+	public void setTimeLine(List<TimeLine> timeLine) {
+		this.timeLine = timeLine;
 	}
 	
 }

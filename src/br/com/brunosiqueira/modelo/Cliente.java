@@ -6,12 +6,12 @@ import java.util.List;
 public class Cliente extends Pessoa {
 
 	private List<Projeto> projetos;
-	
-	
+
+
 	public Cliente(String nome, Projeto projeto) {
 		super();
 		this.projetos = new ArrayList<Projeto>();
-		
+
 		this.setNome(nome);				
 		this.setProjeto(projeto);
 	}
@@ -19,11 +19,11 @@ public class Cliente extends Pessoa {
 	public List<Projeto> getAllProjetos() {
 		return projetos;
 	}
-	
-   public Projeto getLocalizaProjeto(Projeto p) {
-		
+
+	public Projeto getProjeto(Projeto p) {
+
 		if (this.projetos.contains(p)) {
-		  	return this.projetos.get(this.projetos.indexOf(p));
+			return this.projetos.get(this.projetos.indexOf(p));
 		}
 		else {
 			return null;

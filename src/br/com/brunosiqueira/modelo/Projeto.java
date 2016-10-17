@@ -23,11 +23,11 @@ public class Projeto {
 		this.tarefas.add(tarefa);
 	}
 	
-	public StringBuilder getTarefa(){
+	public StringBuilder getAllDescricaoTarefas(){
 		StringBuilder descricao = new StringBuilder();
-		for (Tarefa t : tarefas){
-			descricao.append("Descricao da tarefa: " + t.getDescricao() + ' ');	
-		}
+		
+		this.tarefas.forEach(t -> descricao.append("Descricao da tarefa:" + t.getDescricao() + ' '));
+				
 		return descricao;		
 	}
 

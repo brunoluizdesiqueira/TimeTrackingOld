@@ -1,6 +1,7 @@
 package br.com.brunosiqueira.modelo;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -9,6 +10,9 @@ import java.util.TimerTask;
 
 public class TimeLine {
 	
+	private LocalDate instante;
+	private TipoTransicao transicao;
+	private String descricao;
 	private Timer timer;
 	private ArrayList<Calendar> tempoPercorrido;
 	
@@ -17,12 +21,43 @@ public class TimeLine {
 		this.tempoPercorrido = new ArrayList<Calendar>();
 	}
 	
+	public TimeLine(TipoTransicao transicao, String descricao) {
+		super();
+		this.instante = LocalDate.now();
+		this.transicao = transicao;
+		this.descricao = descricao;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public TipoTransicao getTransicao() {
+		return transicao;
+	}
+
+	public void setTransicao(TipoTransicao transicao) {
+		this.transicao = transicao;
+	}
+
+	public LocalDate getInstante() {
+		return instante;
+	}
+
+	public void setInstante(LocalDate instante) {
+		this.instante = instante;
+	}
+	
 	public void registrar(){
 		Calendar tmp = Calendar.getInstance();
 		this.tempoPercorrido.add(tmp);
 	}
 	
-	public StringBuilder retornaTempo(){		
+	public StringBuilder retornaTempo(){
 		SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss:ms:ms Z");
 		StringBuilder time = new StringBuilder();
 		
