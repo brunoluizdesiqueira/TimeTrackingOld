@@ -9,11 +9,12 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class TimeLine {
-	
+	private Integer id;
 	private LocalDate instante;
 	private TipoTransicao transicao;
 	private String descricao;
-	private Timer timer;
+	private Pessoa pessoaParecer;
+
 	private ArrayList<Calendar> tempoPercorrido;
 	
 	public TimeLine() {
@@ -21,11 +22,9 @@ public class TimeLine {
 		this.tempoPercorrido = new ArrayList<Calendar>();
 	}
 	
-	public TimeLine(TipoTransicao transicao, String descricao) {
+	public TimeLine(TipoTransicao transicao, String descricao, Pessoa pessoaParecer) {
 		super();
-		this.instante = LocalDate.now();
-		this.transicao = transicao;
-		this.descricao = descricao;
+		this.registrar(transicao, descricao, pessoaParecer);
 	}
 
 	public String getDescricao() {
@@ -43,7 +42,7 @@ public class TimeLine {
 	public void setTransicao(TipoTransicao transicao) {
 		this.transicao = transicao;
 	}
-
+		
 	public LocalDate getInstante() {
 		return instante;
 	}
@@ -52,11 +51,17 @@ public class TimeLine {
 		this.instante = instante;
 	}
 	
-	public void registrar(){
-		Calendar tmp = Calendar.getInstance();
-		this.tempoPercorrido.add(tmp);
+	public void registrar(TipoTransicao transicao, String descricao, Pessoa pessoaParecer){
+		this.instante = LocalDate.now();
+		this.transicao = transicao;
+		this.descricao = descricao;
+		this.pessoaParecer = pessoaParecer;
+		
+		//Calendar tmp = Calendar.getInstance();
+		//this.tempoPercorrido.add(tmp);
 	}
 	
+	// mover para a classe de controle TimeTracking
 	public StringBuilder retornaTempo(){
 		SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss:ms:ms Z");
 		StringBuilder time = new StringBuilder();
@@ -69,17 +74,20 @@ public class TimeLine {
 		return time;
 	}
 	
+	// deverá ter um atributo de periodo na classe de controle TimeTracking
 	public ArrayList<Calendar> periodo(){
 		return tempoPercorrido;	
 	}
 	
+	// metodo apenas para exemplo, em breve estarei removendo
 	public void iniciaCronometro(){
-    	this.timer = null;  
+    	Timer timer = null;  
+    	
         final SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
         
-        if (this.timer == null)   
+        if (timer == null)   
          {      
-            this.timer = new Timer();  
+            timer = new Timer();  
             TimerTask tarefa = new TimerTask() {     
                  public void run()   
                  {      
@@ -90,8 +98,18 @@ public class TimeLine {
                      }      
                  }   
              };      
-            this.timer.scheduleAtFixedRate(tarefa, 0, 1000);      
+            timer.scheduleAtFixedRate(tarefa, 0, 1000);      
         }    
     }
+
+	
+	public Integer getId() {
+		return id;
+	}
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	
 }

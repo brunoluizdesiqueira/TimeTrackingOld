@@ -11,7 +11,7 @@ public class Tarefa {
 	private Colaborador responsavel;
 	private Colaborador membro;
 	private LocalDate criacao;
-	private List<TimeLine> timeLine;
+	private TimeTracking timeTracking;
 	
 	// Ver uma forma de vincular um cliente -> projeto
 	// deve ser buscado por cliente e assiciado um dos projetos deste cliente
@@ -24,6 +24,8 @@ public class Tarefa {
 		this.responsavel = responsavel;
 		this.membro = membro;
 		this.criacao = LocalDate.now();
+		
+		this.timeTracking = new TimeTracking();
 	}
 	
 	public String getTitulo() {
@@ -99,13 +101,10 @@ public class Tarefa {
 	}
 
 
-	public List<TimeLine> getTimeLine() {
-		return timeLine;
+	
+public TimeTracking getTimeTracking() {
+		return timeTracking;
 	}
 
-
-	public void setTimeLine(List<TimeLine> timeLine) {
-		this.timeLine = timeLine;
-	}
 	
 }

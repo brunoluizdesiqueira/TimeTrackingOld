@@ -4,5 +4,6 @@ public enum TipoTransicao {
 	Iniciado,
 	Pausado,
 	Reiniciado,
-	Finalizado;
+	Finalizado,
+	Inalterado;
 }

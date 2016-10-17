@@ -6,6 +6,7 @@ import br.com.brunosiqueira.modelo.Projeto;
 import br.com.brunosiqueira.modelo.StatusPessoa;
 import br.com.brunosiqueira.modelo.Tarefa;
 import br.com.brunosiqueira.modelo.TimeTracking;
+import br.com.brunosiqueira.modelo.TipoTransicao;
 
 public class Running {
 
@@ -35,12 +36,15 @@ public class Running {
 		// Imprimindo no console o nome do projeto associado ao cliente e as tarefas likadas a este projeto
 		System.out.println(alterdata.getProjeto(erp).getNome().toString() + " " + alterdata.getProjeto(erp).getAllDescricaoTarefas());
 		
-		// Criando a class TimeTracking
-		TimeTracking timeTracking = new TimeTracking(alterdata.getProjeto(erp), "Teste time tracking");		
+		// Iniciar as tarefas associadas ao cliente 
 		
-		timeTracking.getTimeLine().registrar();
+		
+		//alterdata.getProjeto(erp).getTarefas().forEach(t -> t.getTimeTracking().getTimeLine().indexOf(0));
 			
-		System.out.println(timeTracking.getTimeLine().retornaTempo());	
+		
+		//timeTracking.getTimeLine().registrar(TipoTransicao.Inalterado, "Delegando tarefa", bruno);
+			
+		//System.out.println(timeTracking.getTimeLine().retornaTempo());	
 			
 	}
 

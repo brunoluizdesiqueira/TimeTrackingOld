@@ -1,38 +1,16 @@
 package br.com.brunosiqueira.modelo;
 
+import java.util.List;
+
 public class TimeTracking {
 	private Integer id;
-	private Projeto projeto;
-	private String descricao;
-	private TimeLine timeLine; 
 	private long tempoTotal;
+	private List<TimeLine> timeLine;
 	
-
-	public TimeTracking(Projeto projeto, String descricao) {
+	public TimeTracking() {
 		super();
-		this.projeto = projeto;
-		this.descricao = descricao;
+	}
 		
-		// cria a class TimeLine
-		this.timeLine = new TimeLine();
-	}
-
-	public Projeto getProjeto() {
-		return projeto;
-	}
-
-	public void setProjeto(Projeto projeto) {
-		this.projeto = projeto;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	
 	public long getTempoTotal() {
 		return tempoTotal;
 	}
@@ -44,13 +22,15 @@ public class TimeTracking {
 	public Integer getId() {
 		return id;
 	}
+
 	
-	public TimeLine getTimeLine() {
+	public List<TimeLine> getTimeLine() {
 		return timeLine;
 	}
+
 	
-	public void setTimeLine(TimeLine timeLine) {
+	public void setTimeLine(List<TimeLine> timeLine) {
 		this.timeLine = timeLine;
 	}
-
+	
 }
