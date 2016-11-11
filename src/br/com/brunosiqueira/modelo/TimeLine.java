@@ -1,25 +1,22 @@
 package br.com.brunosiqueira.modelo;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class TimeLine {
 	private Integer id;
-	private LocalDate instante;
+	private LocalDateTime instante;
 	private TipoTransicao transicao;
 	private String descricao;
 	private Pessoa pessoaParecer;
 
-	private ArrayList<Calendar> tempoPercorrido;
-	
 	public TimeLine() {
 		super();
-		this.tempoPercorrido = new ArrayList<Calendar>();
+		new ArrayList<LocalDateTime>();
 	}
 	
 	public TimeLine(TipoTransicao transicao, String descricao, Pessoa pessoaParecer) {
@@ -43,73 +40,58 @@ public class TimeLine {
 		this.transicao = transicao;
 	}
 		
-	public LocalDate getInstante() {
+	public LocalDateTime getInstante() {
 		return instante;
 	}
 
-	public void setInstante(LocalDate instante) {
+	public void setInstante(LocalDateTime instante) {
 		this.instante = instante;
 	}
 	
 	public void registrar(TipoTransicao transicao, String descricao, Pessoa pessoaParecer){
-		this.instante = LocalDate.now();
+		this.instante = LocalDateTime.now();
 		this.transicao = transicao;
 		this.descricao = descricao;
-		this.pessoaParecer = pessoaParecer;
-		
-		//Calendar tmp = Calendar.getInstance();
-		//this.tempoPercorrido.add(tmp);
+		this.setPessoaParecer(pessoaParecer);
 	}
-	
-	// mover para a classe de controle TimeTracking
-	public StringBuilder retornaTempo(){
-		SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss:ms:ms Z");
-		StringBuilder time = new StringBuilder();
 		
-		for (Calendar c: tempoPercorrido ) {
-		  dateFormat.setTimeZone(c.getTimeZone());
-		  time.append(dateFormat.format(c.getTime()) + ' ');
-		}
-		
-		return time;
-	}
-	
-	// deverá ter um atributo de periodo na classe de controle TimeTracking
-	public ArrayList<Calendar> periodo(){
-		return tempoPercorrido;	
-	}
-	
-	// metodo apenas para exemplo, em breve estarei removendo
-	public void iniciaCronometro(){
-    	Timer timer = null;  
-    	
-        final SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
-        
-        if (timer == null)   
-         {      
-            timer = new Timer();  
-            TimerTask tarefa = new TimerTask() {     
-                 public void run()   
-                 {      
-                     try {      
-                         System.out.println("Hora: "+format.format(new Date().getTime()));      
-                   } catch (Exception e) {      
-                         e.printStackTrace();      
-                     }      
-                 }   
-             };      
-            timer.scheduleAtFixedRate(tarefa, 0, 1000);      
-        }    
-    }
-
-	
 	public Integer getId() {
 		return id;
 	}
 
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	
+	public Pessoa getPessoaParecer() {
+		return pessoaParecer;
+	}
+	
+
+	public void setPessoaParecer(Pessoa pessoaParecer) {
+		this.pessoaParecer = pessoaParecer;
+	}
+	
+	// metodo apenas para exemplo, em breve estarei removendo
+	public void iniciaCronometro() {
+		Timer timer = null;
+
+		final SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+
+		if (timer == null) {
+			timer = new Timer();
+			TimerTask tarefa = new TimerTask() {
+				public void run() {
+					try {
+						System.out.println("Hora: " + format.format(new Date().getTime()));
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			};
+			timer.scheduleAtFixedRate(tarefa, 0, 1000);
+		}
+	}
+
 }
