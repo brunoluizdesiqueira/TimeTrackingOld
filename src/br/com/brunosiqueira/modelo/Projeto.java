@@ -26,7 +26,7 @@ public class Projeto {
 	public StringBuilder getAllDescricaoTarefas(){
 		StringBuilder descricao = new StringBuilder();
 		
-		this.tarefas.forEach(t -> descricao.append("Descricao da tarefa:" + t.getDescricao() + ' '));
+		this.tarefas.forEach(t -> descricao.append("- Descricao da tarefa: " + t.getDescricao() + ' '));
 				
 		return descricao;		
 	}

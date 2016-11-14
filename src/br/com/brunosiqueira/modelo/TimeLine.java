@@ -21,7 +21,10 @@ public class TimeLine {
 	
 	public TimeLine(TipoTransicao transicao, String descricao, Pessoa pessoaParecer) {
 		super();
-		this.registrar(transicao, descricao, pessoaParecer);
+		this.transicao = transicao;
+		this.descricao = descricao;
+		this.setPessoaParecer(pessoaParecer);
+		this.instante = LocalDateTime.now();	
 	}
 
 	public String getDescricao() {
@@ -47,13 +50,6 @@ public class TimeLine {
 	public void setInstante(LocalDateTime instante) {
 		this.instante = instante;
 	}
-	
-	public void registrar(TipoTransicao transicao, String descricao, Pessoa pessoaParecer){
-		this.instante = LocalDateTime.now();
-		this.transicao = transicao;
-		this.descricao = descricao;
-		this.setPessoaParecer(pessoaParecer);
-	}
 		
 	public Integer getId() {
 		return id;
@@ -62,13 +58,11 @@ public class TimeLine {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 	
 	public Pessoa getPessoaParecer() {
 		return pessoaParecer;
 	}
 	
-
 	public void setPessoaParecer(Pessoa pessoaParecer) {
 		this.pessoaParecer = pessoaParecer;
 	}

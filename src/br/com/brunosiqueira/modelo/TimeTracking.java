@@ -1,19 +1,20 @@
 package br.com.brunosiqueira.modelo;
 
+import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TimeTracking {
 	private Integer id;
-	private long tempoTotal;
 	private List<TimeLine> timeLine;
 	
 	public TimeTracking() {
-		super();	
+		super();
+	    this.timeLine = new ArrayList<TimeLine>();
 	}
 		
-	public long getTempoTotal() {
-		this.timeLine.forEach(t -> t.getInstante());
-		return tempoTotal;
+	public Duration getTempoTotal() {	
+	  return Duration.between(this.timeLine.get(0).getInstante(), this.timeLine.get(this.timeLine.size() -1).getInstante());
 	}
 	
 	public Integer getId() {
@@ -26,6 +27,10 @@ public class TimeTracking {
 
 	public void setTimeLine(List<TimeLine> timeLine) {
 		this.timeLine = timeLine;
+	}
+	
+	public void registrar(TipoTransicao transicao, String descricao, Pessoa pessoaParecer){
+	   timeLine.add(new TimeLine(transicao, descricao, pessoaParecer));		
 	}
 	
 }

@@ -99,10 +99,8 @@ public class Tarefa {
 	public void setMembro(Colaborador membro) {
 		this.membro = membro;
 	}
-
-
 	
-public TimeTracking getTimeTracking() {
+   public TimeTracking getTimeTracking() {
 		return timeTracking;
 	}
 
