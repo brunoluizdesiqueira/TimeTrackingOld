@@ -19,8 +19,12 @@ public class Projeto {
 		return tarefas;
 	}
 
-	public void setTarefas(Tarefa tarefa) {
+	public void setTarefa(Tarefa tarefa) {
 		this.tarefas.add(tarefa);
+	}
+	
+	public void setTarefas(List<Tarefa> tarefas) {
+		this.tarefas.addAll(tarefas);
 	}
 	
 	public StringBuilder getAllDescricaoTarefas(){
