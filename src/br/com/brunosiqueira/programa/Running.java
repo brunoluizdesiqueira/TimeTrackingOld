@@ -67,10 +67,10 @@ public class Running {
 		// Imprimindo todas os tempos
 		timeTracking.getTimeLine().forEach(t -> System.out.println(t.getTransicao() + " " + t.getInstante()));
 		
-		// Retorna o tempo total decorrido
+		// Retorna o tempo total decorrido da tarefa index 0
 		Duration d = timeTracking.getTempoTotal();
 		
-		// Imprimindo o total do tempo gasto
+		// Imprimindo o total do tempo gasto na tarefa index 0
 		System.out.printf("%s hora(s), %s minuto(s) e %s segundo(s)",
 				d.toHours(), d.toMinutes(), d.getSeconds());
 			
