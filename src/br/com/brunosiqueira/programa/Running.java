@@ -44,25 +44,25 @@ public class Running {
 		TimeTracking timeTracking = alterdata.getProjeto(erp).getTarefas().get(0).getTimeTracking();
 		
 		// Iniciar a tarefa index 0 associada ao cliente por meio do metodo registrar da classe timeTracking  
-		timeTracking.registrar(TipoTransicao.Iniciado, "Iniciando analise", bruno);
+		timeTracking.registrar(TipoTransicao.INICIADO, "Iniciando analise", bruno);
 		
 		// Espera 30 segundos
 		TimeUnit.SECONDS.sleep(2);
 		
 		// Pausa a tarefa 
-		timeTracking.registrar(TipoTransicao.Pausado, "Parando para almoço", bruno);
+		timeTracking.registrar(TipoTransicao.PAUSADO, "Parando para almoço", bruno);
 		
 		// Espera 10 segundos
-		TimeUnit.SECONDS.sleep(30);
+		TimeUnit.SECONDS.sleep(8);
 		
 		// Reiniciando a tarefa
-		timeTracking.registrar(TipoTransicao.Reiniciado, "Retornando do almoço", bruno);
+		timeTracking.registrar(TipoTransicao.REINICIADO, "Retornando do almoço", bruno);
 		
 		// Espera 10 segundos
-		TimeUnit.SECONDS.sleep(40);
+		TimeUnit.SECONDS.sleep(10);
 		
 		// Finaliza a tarefa
-		timeTracking.registrar(TipoTransicao.Finalizado, "Tarefa concluída", bruno);			
+		timeTracking.registrar(TipoTransicao.FINALIZADO, "Tarefa concluída", bruno);			
 		
 		// Imprimindo todas os tempos
 		timeTracking.getTimeLine().forEach(t -> System.out.println(t.getTransicao() + " " + t.getInstante()));
@@ -71,8 +71,7 @@ public class Running {
 		Duration d = timeTracking.getTempoTotal();
 		
 		// Imprimindo o total do tempo gasto na tarefa index 0
-		System.out.printf("%s hora(s), %s minuto(s) e %s segundo(s)",
-				d.toHours(), d.toMinutes(), d.getSeconds());
+		System.out.printf("%s hora(s), %s minuto(s) e %s segundo(s)", d.toHours(), d.toMinutes(), d.getSeconds());
 			
 	}
 
